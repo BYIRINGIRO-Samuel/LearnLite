@@ -1,0 +1,142 @@
+import { useState, useEffect, useRef } from 'react';
+import TeacherProfileDropdown from './TeacherProfileDropdown';
+import Rightsidebar from './Rightsidebar';
+
+interface TrTopbarProps {
+  userName: string;
+}
+
+const AdminTopbar: React.FC<TrTopbarProps> = ({ userName }) => {
+  const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+  const [isRightSidebarOpen, setIsRightSidebarOpen] = useState(false);
+  const dropdownRef = useRef<HTMLDivElement>(null);
+  const [firstName, setFirstName] = useState<string>('');
+  const [profilePicture, setProfilePicture] = useState<string | undefined>(undefined);
+
+  useEffect(() => {
+    if (userName) {
+      const names = userName.split(' ');
+      setFirstName(names[0]);
+    }
+    const userStr = localStorage.getItem('user');
+    if (userStr) {
+      try {
+        const user = JSON.parse(userStr);
+        setProfilePicture(user.profilePicture || undefined);
+      } catch (error) {
+        console.error('Error parsing user data from localStorage:', error);
+      }
+    }
+  }, [userName]);
+
+  const toggleDropdown = () => {
+    setIsDropdownOpen(!isDropdownOpen);
+  };
+
+  const closeDropdown = () => {
+    setIsDropdownOpen(false);
+  };
+
+  const toggleRightSidebar = () => {
+    setIsRightSidebarOpen(!isRightSidebarOpen);
+  };
+
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      if (dropdownRef.current && !dropdownRef.current.contains(event.target as Node)) {
+        closeDropdown();
+      }
+    };
+
+    document.addEventListener('mousedown', handleClickOutside);
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside);
+    };
+  }, []);
+
+  return (
+    <header className="sticky top-0 z-50 w-full bg-white border-b">
+      <div className="flex items-center justify-between h-16 px-4 sm:px-6 lg:px-8">
+        <div className="flex items-center">
+          {/* Add your logo or other content here */}
+        </div>
+
+        {/* Right side - notifications and profile */}
+        <div className="flex items-center space-x-4">
+          {/* Notification Button */}
+          <button 
+            className="relative p-2 text-gray-600 rounded-full hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500"
+            onClick={toggleRightSidebar}
+            aria-label="Notifications"
+          >
+            <svg
+              className="w-6 h-6"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              />
+            </svg>
+            <span className="absolute top-1.5 right-1.5 w-2 h-2 bg-blue-500 rounded-full border-2 border-white"></span>
+          </button>
+
+          {/* Profile Dropdown */}
+          <div className="relative" ref={dropdownRef}>
+            <button
+              onClick={toggleDropdown}
+              className="flex items-center space-x-3 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 rounded-full"
+            >
+              {profilePicture ? (
+                <img
+                  src={profilePicture}
+                  alt="User Avatar"
+                  className="w-8 h-8 rounded-full object-cover border-2 border-gray-200"
+                />
+              ) : (
+                <img
+                  src="/assets/images/notfound.jpg"
+                  alt="Default User Avatar"
+                  className="w-8 h-8 rounded-full object-cover border-2 border-gray-200"
+                />
+              )}
+              
+              <span className="hidden sm:block text-sm font-medium text-gray-700">{firstName}</span>
+              <svg
+                className={`w-4 h-4 text-gray-400 transition-transform duration-200 ${isDropdownOpen ? 'rotate-180' : ''}`}
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  d="M19 9l-7 7-7-7"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                />
+              </svg>
+            </button>
+            {isDropdownOpen && <TeacherProfileDropdown onClose={closeDropdown} />}
+          </div>
+        </div>
+      </div>
+
+      {/* Right Sidebar */}
+      {isRightSidebarOpen && (
+        <>
+          <div className="fixed inset-y-0 right-0 w-64 bg-white shadow-lg z-50 overflow-y-auto hide-scrollbar">
+            <Rightsidebar onClose={toggleRightSidebar} />
+          </div>
+          <div 
+            className="fixed inset-0 bg-black bg-opacity-50 z-40"
+            onClick={toggleRightSidebar}
+          />
+        </>
+      )}
+    </header>
+  );
+};
+
+export default AdminTopbar;
