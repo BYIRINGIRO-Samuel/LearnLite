@@ -81,8 +81,8 @@ const AdminHome = () => {
                             className="w-full h-full object-cover rounded-[10px]"
                         />
                         <div className="absolute inset-0 flex flex-col items-center justify-center text-white bg-black/40 rounded-[10px] text-center p-2">
-                            <p className="text-sm mb-1">{currentDate}</p>
-                            <p className="text-2xl font-bold">{currentTime}</p>
+                            <p className="text-sm mb-1">{currentTime}</p>
+                            <p className="text-2xl font-bold">{currentDate}</p>
                         </div>
                     </div>
 

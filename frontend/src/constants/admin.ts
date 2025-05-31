@@ -23,12 +23,12 @@ export const admindashboardlinks = [
     },
     {
         imgURL: "/assets/icons/notification.svg",
-        route: "/notifications",
+        route: "/admin/notifications",
         label: "Notifications",
     },
     {
         imgURL: "/assets/icons/setting_1.svg",
-        route: "settings",
+        route: "/admin/settings",
         label: "Settings",
     }
 ]

@@ -1,9 +1,12 @@
 //import Bottombar from '../components/Bottombar';
+import { useNavigate } from 'react-router-dom';
 import AdminLeftsidebar from '../components/adminleftsidebar';
 import AdminTopbar from '../components/AdminTopbar';
-import StudentManagementSection from '../components/StudentManagementSection';
+import TeachersManagementSection from '../components/TeachersManagementSection';
 
-const ManageStudents = () => {
+const ManageTeachers = () => {
+  const navigate = useNavigate();
+
   return (
     <div className="flex h-screen w-full overflow-hidden">
       <div className="hidden md:flex flex-shrink-0 overflow-y-auto hide-scrollbar">
@@ -14,7 +17,7 @@ const ManageStudents = () => {
         <div className="border-b border-gray-200"></div>
         <div className="flex flex-1 overflow-hidden">
           <div className="flex-1 overflow-y-auto p-4 hide-scrollbar">
-            <StudentManagementSection/>
+            <TeachersManagementSection/>
           </div>
         </div>
       </div>
@@ -22,4 +25,4 @@ const ManageStudents = () => {
   );
 };
 
-export default ManageStudents;
+export default ManageTeachers;

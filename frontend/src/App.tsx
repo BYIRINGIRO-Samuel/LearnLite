@@ -8,11 +8,10 @@ import Videos from "./pages/Videos";
 import Assignments from "./pages/Assignments";
 import Achievements from "./pages/Achievements";
 import Downloads from "./pages/Downloads";
-import Settings from "./pages/Settings";
+import Settings from "./pages/StudentsSettings";
 import Timetable from "./pages/Timetable";
 import Teacherdashboard from "./dashboards/teacherdashboard";
 import Timetables from "./pages/Timetables";
-import ManageStudents from "./pages/ManageStudents";
 import Uploads from "./pages/Uploads";
 import UploadVideos from "./pages/lessons/UploadVideos";
 import Upload from "./pages/lessons/upload";
@@ -32,6 +31,12 @@ import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import TeacherOnboarding from "./pages/TeacherOnboarding";
 import Admindashboard from "./dashboards/admindashboard";
+import ManageTeachers from "./pages/ManageTeachers";
+import TrManageStudents from "./pages/TrManageStudents";
+import ManageStudents from "./pages/ManageStudents";
+import AdminNotifications from "./pages/AdminNotifications";
+import AdminSettings from "./pages/AdminSettings";
+
 
 const App = () => {
   useEffect(() => {
@@ -124,7 +129,7 @@ const App = () => {
         } />
         <Route path="/teacherdashboard/students" element={
           <ProtectedRoute allowedRoles={['teacher']}>
-            <ManageStudents />
+            <TrManageStudents />
           </ProtectedRoute>
         } />
         <Route path="/teacherdashboard/uploads" element={
@@ -187,6 +192,26 @@ const App = () => {
         <Route path="/admindashboard" element={
           <ProtectedRoute allowedRoles={['admin']}>
             <Admindashboard/>
+          </ProtectedRoute>
+        }/>
+        <Route path="/admin/teachers" element={
+          <ProtectedRoute allowedRoles={['admin']}>
+            <ManageTeachers/>
+          </ProtectedRoute>
+        }/>
+        <Route path="/admin/students" element={
+          <ProtectedRoute allowedRoles={['admin']}>
+            <ManageStudents/>
+          </ProtectedRoute>
+        }/>
+        <Route path="/admin/notifications" element={
+          <ProtectedRoute allowedRoles={['admin']}>
+            <AdminNotifications/>
+          </ProtectedRoute>
+        }/>
+        <Route path="/admin/settings" element={
+          <ProtectedRoute allowedRoles={['admin']}>
+            <AdminSettings/>
           </ProtectedRoute>
         }/>
 

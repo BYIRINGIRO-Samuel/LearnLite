@@ -1,7 +1,7 @@
 import Leftsidebar from "../components/Leftsidebar";
 import { useState } from "react";
 import ProfilePage from "../components/Profile";
-import Notifications from "../components/Notifications";
+import Notifications from "../components/StudentNotifications";
 import Theme from "../components/Theme";
 
 const Settings = () => {
