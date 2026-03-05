@@ -115,7 +115,6 @@ const AdminTopbar: React.FC<AdminTopbarProps> = ({ userName }) => {
           <MobileMenu userName={userName} userRole={userRole} />
         </div>
 
-        {/* Right side - notifications and profile */}
         <div className="flex items-center space-x-4">
           {/* Notification Button */}
           <button 
