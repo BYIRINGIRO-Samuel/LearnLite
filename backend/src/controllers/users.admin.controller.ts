@@ -128,7 +128,7 @@ export const createStudent: RequestHandler = async (req: IRequest, res, next) =>
       name,
       email,
       phone,
-      password, // Make sure to hash this in your User model pre-save hook
+      password, 
       role: "student",
       school: adminSchool._id,
       grade,
