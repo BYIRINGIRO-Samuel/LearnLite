@@ -446,7 +446,7 @@ export const verifyOtp: RequestHandler = async (req, res, next) => {
     // The frontend will then navigate to the NewPassword screen.
     res.status(200).json({
       message: "OTP verified successfully.",
-      email: user.email, // Optionally return email for the next step
+      email: user.email, 
     });
 
   } catch (error) {
