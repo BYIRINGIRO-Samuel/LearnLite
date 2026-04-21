@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Search, ChevronDown, ChevronUp, BookOpen, Clock, Users, Star, ArrowRight, Shield, Zap, Sparkles, GraduationCap } from 'lucide-react';
+import { Search, ChevronDown, ChevronUp, BookOpen, Clock, Users, Star, ArrowRight, Shield, Zap, Sparkles, GraduationCap, Play } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
 const Home = () => {
@@ -46,163 +46,209 @@ const Home = () => {
   const partners = ["Stanford University", "MIT", "Oxford", "Harvard", "Cambridge"];
 
   return (
-    <div className="min-h-screen bg-white font-poppins text-gray-900">
+    <div className="min-h-screen bg-white font-poppins text-gray-900 overflow-x-hidden">
       
-      {/* Fixed Navbar */}
+      {/* Fixed Navbar - Slightly gray with glass effect */}
       <div className="fixed top-0 left-0 right-0 z-50 flex justify-center px-4 pt-6 pointer-events-none">
-        <nav className="max-w-7xl w-full bg-white/70 backdrop-blur-md border border-[#349156]/10 rounded-2xl px-8 py-5 flex items-center justify-between shadow-sm pointer-events-auto animate-in fade-in slide-in-from-top duration-700">
-          <div className="flex items-center gap-2">
-            <div className="p-1.5 bg-[#349156]/10 rounded-lg">
-              <GraduationCap className="w-6 h-6 text-[#349156]" />
+        <nav className="max-w-7xl w-full bg-gray-100/90 backdrop-blur-xl border border-gray-200 rounded-3xl px-8 py-4 flex items-center justify-between shadow-lg pointer-events-auto animate-in fade-in slide-in-from-top duration-700">
+          <div className="flex items-center gap-3">
+            <div className="w-10 h-10 bg-[#349156] rounded-full flex items-center justify-center shadow-md shadow-[#349156]/20">
+              <GraduationCap className="w-6 h-6 text-white" />
             </div>
-            <span className="text-xl font-bold text-gray-800 tracking-tight">NotoSpace</span>
+            <span className="text-xl font-extrabold text-gray-900 tracking-tighter">NotoSpace</span>
           </div>
 
           <div className="hidden md:flex items-center gap-10">
-            <a href="#hero" className="text-[#349156] font-semibold text-sm">Home</a>
-            <a href="#features" className="text-gray-500 font-medium text-sm hover:text-[#349156] transition">Features</a>
-            <a href="#social-proof" className="text-gray-500 font-medium text-sm hover:text-[#349156] transition">Community</a>
-            <a href="#faq" className="text-gray-500 font-medium text-sm hover:text-[#349156] transition">Q&A</a>
+            <a href="#hero" className="text-[#349156] font-bold text-sm tracking-tight hover:opacity-80">Home</a>
+            <a href="#features" className="text-gray-500 font-semibold text-sm hover:text-[#349156] transition">Features</a>
+            <a href="#social-proof" className="text-gray-500 font-semibold text-sm hover:text-[#349156] transition">Community</a>
+            <a href="#faq" className="text-gray-500 font-semibold text-sm hover:text-[#349156] transition">Q&A</a>
           </div>
 
           <div className="flex items-center gap-6">
-            <Link to="/login" className="text-gray-600 font-semibold text-sm hover:text-[#349156] transition">Sign In</Link>
-            <Link to="/signup" className="px-6 py-2.5 border border-[#349156]/30 text-[#349156] rounded-xl font-bold text-sm hover:bg-[#349156] hover:text-white transition shadow-sm">
-              Join Now
+            <Link to="/login" className="text-gray-600 font-bold text-sm hover:text-[#349156] transition">Sign In</Link>
+            <Link to="/signup" className="px-8 py-3 bg-white text-[#349156] border border-[#349156]/20 rounded-2xl font-bold text-sm hover:bg-[#349156] hover:text-white transition shadow-sm">
+              Get Started
             </Link>
           </div>
         </nav>
       </div>
 
       {/* Hero Section */}
-      <section className="relative pt-28 pb-20 overflow-hidden bg-[#f7faf9]">
-        <div className="max-w-7xl mx-auto px-4 relative">
-          
-          <div id="hero" className="flex flex-col md:flex-row items-center gap-12 relative pt-[5px] pb-10">
-            {/* Left Content */}
-            <div className="flex-1 space-y-8 z-10 animate-in fade-in slide-in-from-left duration-700">
-              <div className="absolute top-10 -left-10 opacity-30">
-                 <div className="grid grid-cols-4 gap-2">
-                   {[...Array(12)].map((_, i) => (
-                     <div key={i} className="w-2 h-1 bg-orange-400 rounded-full rotate-45" />
-                   ))}
-                 </div>
-              </div>
+      <section className="relative pt-40 pb-32 overflow-hidden bg-white">
+        {/* Background Innovative Shapes */}
+        <div className="absolute top-0 right-0 w-1/2 h-full bg-[#f7faf9] -z-10 rounded-l-[100px] overflow-hidden">
+           <div className="absolute top-1/4 right-0 w-96 h-96 bg-[#349156]/5 rounded-full blur-3xl animate-pulse" />
+           <div className="absolute bottom-1/4 left-0 w-64 h-64 bg-orange-400/5 rounded-full blur-3xl" />
+        </div>
 
-              <div className="space-y-6 pt-10">
-                <span className="text-[#349156] font-bold tracking-widest uppercase text-xs opacity-70">Elevate your study game</span>
-                <h1 className="text-5xl md:text-7xl font-extrabold leading-tight text-gray-900">
-                  Sharpen Your <br />
-                  <span className="text-[#349156]">Success</span> with <br />
+        <div className="max-w-7xl mx-auto px-4 relative">
+          <div id="hero" className="flex flex-col md:flex-row items-center gap-16 relative">
+            
+            {/* Left Content */}
+            <div className="flex-1 space-y-10 z-10 animate-in fade-in slide-in-from-left duration-1000">
+              <div className="space-y-6">
+                <span className="inline-block px-4 py-1 bg-[#349156]/10 text-[#349156] rounded-full font-bold text-xs tracking-widest uppercase">The future of study</span>
+                <h1 className="text-6xl md:text-8xl font-black leading-[1.05] text-gray-900 tracking-tight">
+                  Master Your <br />
+                  <span className="text-[#349156]">Education</span> with <br />
                   NotoSpace.
                 </h1>
-                <p className="text-xl text-gray-500 max-w-md leading-relaxed font-light">
-                  The ultimate digital workspace for your notes, assignments, and collaborative learning.
+                <p className="text-xl text-gray-500 max-w-md leading-relaxed font-medium opacity-80">
+                  Join the most innovative collaborative workspace built for students to share, learn, and excel together.
                 </p>
               </div>
 
-              <div className="pt-4">
-                <button className="px-10 py-5 bg-[#349156] text-white rounded-2xl font-bold text-lg hover:bg-[#2a7a45] transition-all hover:shadow-2xl shadow-xl shadow-[#349156]/30 flex items-center gap-2 group">
-                  Start Learning Free <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+              <div className="flex flex-col sm:flex-row items-center gap-8">
+                <button className="w-full sm:w-auto px-12 py-5 bg-[#349156] text-white rounded-2xl font-black text-lg hover:bg-[#2a7a45] transition-all hover:translate-y-[-4px] hover:shadow-2xl shadow-xl shadow-[#349156]/30 flex items-center justify-center gap-3 group">
+                  Start Learning Free <ArrowRight className="w-6 h-6 group-hover:translate-x-2 transition-transform" />
+                </button>
+                <button className="flex items-center gap-4 group">
+                   <div className="w-14 h-14 rounded-full bg-white border-2 border-gray-100 flex items-center justify-center shadow-lg group-hover:border-[#349156] transition-colors">
+                      <div className="w-10 h-10 rounded-full border-2 border-[#349156]/20 flex items-center justify-center group-hover:bg-[#349156]/10 transition-colors">
+                         <Play className="w-4 h-4 fill-[#349156] text-[#349156] ml-1" />
+                      </div>
+                   </div>
+                   <span className="font-bold text-gray-700 group-hover:text-[#349156] transition-colors">Live Demo</span>
                 </button>
               </div>
             </div>
 
-            {/* Right Image */}
-            <div className="flex-1 relative animate-in fade-in slide-in-from-right duration-700">
-              <div className="relative z-10">
+            {/* Right Innovative UI Section */}
+            <div className="flex-1 relative animate-in fade-in slide-in-from-right duration-1000">
+              {/* Main Student Image */}
+              <div className="relative z-10 scale-110">
                 <img 
                   src="/hero.png" 
                   alt="Student Studying" 
-                  className="w-full h-auto object-contain scale-110 drop-shadow-xl"
+                  className="w-full h-auto object-contain drop-shadow-[0_35px_35px_rgba(0,0,0,0.1)]"
                 />
               </div>
+
+              {/* Innovative Floating UI Elements */}
               
-              <div className="absolute top-1/4 left-0 text-[#349156] opacity-20 z-0">
-                 <svg width="60" height="60" viewBox="0 0 60 60" fill="none">
-                   <path d="M10 50C25 45 35 25 50 10" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeDasharray="4 4" />
-                   <path d="M45 10H50V15" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
-                 </svg>
+              {/* Chat Bubble 1 */}
+              <div className="absolute top-20 right-[-20px] bg-white p-5 rounded-3xl shadow-2xl z-20 animate-bounce duration-5s max-w-[200px]" style={{ animationDuration: '4s' }}>
+                <div className="font-black text-2xl text-gray-900 leading-tight">Can I <br /> Share this?</div>
+                <div className="absolute -bottom-2 right-10 w-6 h-6 bg-white rotate-45" />
               </div>
+
+              {/* Chat Bubble 2 (Green) */}
+              <div className="absolute bottom-40 right-[40px] bg-gray-900 p-5 rounded-3xl shadow-2xl z-20 animate-bounce delay-700" style={{ animationDuration: '5s' }}>
+                <div className="font-bold text-xl text-white">Help You!</div>
+                <div className="absolute -top-2 left-10 w-6 h-6 bg-gray-900 rotate-45" />
+              </div>
+
+              {/* Floating User Card */}
+              <div className="absolute bottom-10 left-[-40px] bg-white/90 backdrop-blur-md p-4 rounded-[2rem] shadow-2xl z-20 border border-gray-100 space-y-4 animate-in slide-in-from-bottom duration-1000">
+                 <div className="flex items-center gap-3">
+                    <div className="w-10 h-10 rounded-full bg-gray-200 overflow-hidden border-2 border-white shadow-sm">
+                       <img src="https://i.pravatar.cc/100?img=32" alt="User" />
+                    </div>
+                    <div className="w-24 h-2 bg-gray-100 rounded-full overflow-hidden">
+                       <div className="w-full h-full bg-[#349156] rounded-full" />
+                    </div>
+                 </div>
+                 <div className="flex items-center gap-3">
+                    <div className="w-10 h-10 rounded-full bg-gray-200 overflow-hidden border-2 border-white shadow-sm">
+                       <img src="https://i.pravatar.cc/100?img=45" alt="User" />
+                    </div>
+                    <div className="w-20 h-2 bg-gray-100 rounded-full" />
+                 </div>
+                 <div className="flex items-center gap-3">
+                    <div className="w-10 h-10 rounded-full bg-gray-200 overflow-hidden border-2 border-white shadow-sm">
+                       <img src="https://i.pravatar.cc/100?img=12" alt="User" />
+                    </div>
+                    <div className="flex-1 flex justify-center">
+                       <div className="w-6 h-6 bg-red-400 rounded-md flex items-center justify-center text-white text-[10px]">&times;</div>
+                    </div>
+                 </div>
+              </div>
+
+              {/* Shapes */}
+              <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[120%] h-[120%] bg-white/50 rounded-full blur-3xl -z-10" />
             </div>
           </div>
         </div>
       </section>
 
       {/* Social Proof Section */}
-      <section id="social-proof" className="py-20 border-y border-gray-100 bg-white">
+      <section id="social-proof" className="py-24 border-y border-gray-100 bg-white">
         <div className="max-w-7xl mx-auto px-4">
           <div className="text-center mb-12">
-            <h2 className="text-sm font-bold text-gray-400 uppercase tracking-[0.3em] mb-4">Trusted by students from</h2>
-            <div className="flex flex-wrap justify-center items-center gap-10 md:gap-20 opacity-50 grayscale hover:grayscale-0 transition-all duration-500">
+            <h2 className="text-sm font-black text-gray-400 uppercase tracking-[0.5em] mb-4">Trusted Worldwide</h2>
+            <div className="flex flex-wrap justify-center items-center gap-12 md:gap-24 opacity-40 grayscale hover:grayscale-0 transition-all duration-700">
               {partners.map(p => (
-                <span key={p} className="text-2xl font-bold text-gray-800">{p}</span>
+                <span key={p} className="text-2xl font-black text-gray-900 hover:text-[#349156] cursor-default transition-colors">{p}</span>
               ))}
             </div>
           </div>
           <div className="flex justify-center mt-12">
-             <div className="bg-[#349156]/5 px-6 py-3 rounded-full flex items-center gap-4 border border-[#349156]/10">
-                <div className="flex -space-x-2">
-                   {[1,2,3,4].map(i => (
-                     <div key={i} className="w-8 h-8 rounded-full border-2 border-white bg-gray-200 overflow-hidden">
-                        <img src={`https://i.pravatar.cc/100?img=${i+25}`} alt="User" />
+             <div className="bg-gray-100/50 px-8 py-4 rounded-full flex items-center gap-6 border border-gray-200 shadow-sm">
+                <div className="flex -space-x-3">
+                   {[1,2,3,4,5].map(i => (
+                     <div key={i} className="w-10 h-10 rounded-full border-2 border-white bg-gray-200 overflow-hidden shadow-sm">
+                        <img src={`https://i.pravatar.cc/100?img=${i+30}`} alt="User" />
                      </div>
                    ))}
                 </div>
-                <span className="text-sm font-semibold text-gray-600">Join over <span className="text-[#349156]">50,000+</span> active learners today</span>
+                <span className="text-sm font-bold text-gray-500">Join over <span className="text-gray-900 border-b-2 border-[#349156]">50,000+</span> active learners</span>
              </div>
           </div>
         </div>
       </section>
 
       {/* Features Section */}
-      <section id="features" className="py-24 bg-white overflow-hidden">
+      <section id="features" className="py-32 bg-white">
         <div className="max-w-7xl mx-auto px-4">
-          <div className="flex flex-col md:flex-row items-end justify-between mb-16 gap-6">
-            <div className="max-w-2xl">
-               <span className="text-[#349156] font-bold text-sm tracking-widest uppercase">Features</span>
-               <h2 className="text-4xl md:text-5xl font-extrabold mt-4 leading-tight">Everything you need to <span className="text-[#349156]">excel</span> in your studies</h2>
+          <div className="flex flex-col md:flex-row items-end justify-between mb-20 gap-10">
+            <div className="max-w-3xl">
+               <span className="text-[#349156] font-black text-sm tracking-[0.2em] uppercase">Core Features</span>
+               <h2 className="text-5xl md:text-7xl font-black mt-6 leading-tight tracking-tight">Tools built to <br /> make you <span className="text-[#349156]">Unstoppable</span></h2>
             </div>
-            <p className="text-gray-500 max-w-sm">Built by students, for students. We understand the hurdles of collaborative learning.</p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
             {features.map((feature, i) => (
-              <div key={i} className="group p-8 rounded-3xl border border-gray-100 hover:border-[#349156]/20 hover:bg-[#349156]/[0.02] transition-all duration-300">
-                <div className="w-14 h-14 bg-[#349156]/10 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
-                  {feature.icon}
+              <div key={i} className="group relative p-10 rounded-[3rem] bg-[#f7faf9] border border-transparent hover:border-[#349156]/20 hover:bg-white hover:shadow-2xl transition-all duration-500">
+                <div className="w-16 h-16 bg-white rounded-[1.5rem] flex items-center justify-center mb-8 shadow-xl shadow-[#349156]/5 group-hover:scale-110 transition-transform group-hover:bg-[#349156] group-hover:text-white">
+                  <div className="group-hover:text-white transition-colors">
+                    {feature.icon}
+                  </div>
                 </div>
-                <h3 className="text-xl font-bold mb-4">{feature.title}</h3>
-                <p className="text-gray-500 text-sm leading-relaxed">{feature.description}</p>
+                <h3 className="text-2xl font-black mb-4 group-hover:text-[#349156] transition-colors">{feature.title}</h3>
+                <p className="text-gray-500 text-sm leading-relaxed font-medium">{feature.description}</p>
               </div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* Q&A / FAQ Section */}
-      <section id="faq" className="py-24 bg-[#fcfdfd]">
-        <div className="max-w-4xl mx-auto px-4">
-          <div className="text-center mb-16">
-             <span className="text-[#349156] font-bold text-sm tracking-widest uppercase">Q&A</span>
-             <h2 className="text-4xl font-extrabold mt-4">Questions? We have answers</h2>
+      {/* Q&A Section */}
+      <section id="faq" className="py-32 bg-gray-50/50">
+        <div className="max-w-3xl mx-auto px-4">
+          <div className="text-center mb-20">
+             <span className="text-[#349156] font-black text-sm tracking-widest uppercase">Q&A</span>
+             <h2 className="text-5xl font-black mt-4 tracking-tight">Common Questions</h2>
           </div>
 
-          <div className="space-y-4">
+          <div className="space-y-6">
             {faqs.map((faq, i) => (
               <div 
                 key={i} 
-                className={`border bg-white rounded-3xl overflow-hidden transition-all duration-300 ${openFaq === i ? 'border-[#349156] shadow-lg' : 'border-gray-100'}`}
+                className={`group border-2 bg-white rounded-[2rem] overflow-hidden transition-all duration-500 ${openFaq === i ? 'border-[#349156] shadow-2xl' : 'border-gray-100 hover:border-gray-200'}`}
               >
                 <button 
                   onClick={() => setOpenFaq(openFaq === i ? null : i)}
-                  className="w-full px-8 py-6 flex items-center justify-between text-left"
+                  className="w-full px-10 py-8 flex items-center justify-between text-left"
                 >
-                  <span className="text-lg font-bold text-gray-800">{faq.question}</span>
-                  {openFaq === i ? <ChevronUp className="text-[#349156]" /> : <ChevronDown className="text-gray-400" />}
+                  <span className={`text-xl font-black transition-colors ${openFaq === i ? 'text-[#349156]' : 'text-gray-800'}`}>{faq.question}</span>
+                  <div className={`w-10 h-10 rounded-full flex items-center justify-center transition-all ${openFaq === i ? 'bg-[#349156] text-white rotate-180 shadow-lg' : 'bg-gray-100 text-gray-400 group-hover:bg-gray-200'}`}>
+                    {openFaq === i ? <ChevronUp className="w-5 h-5" /> : <ChevronDown className="w-5 h-5" />}
+                  </div>
                 </button>
-                <div className={`overflow-hidden transition-all duration-300 ${openFaq === i ? 'max-h-96' : 'max-h-0'}`}>
-                  <div className="px-8 pb-8 text-gray-500 leading-relaxed">
+                <div className={`overflow-hidden transition-all duration-500 ${openFaq === i ? 'max-h-96' : 'max-h-0'}`}>
+                  <div className="px-10 pb-10 text-gray-500 text-lg leading-relaxed font-medium">
                     {faq.answer}
                   </div>
                 </div>
@@ -213,62 +259,63 @@ const Home = () => {
       </section>
 
       {/* CTA Section */}
-      <section className="py-24 max-w-7xl mx-auto px-4">
-         <div className="bg-[#349156] rounded-[3rem] p-12 md:p-20 text-center relative overflow-hidden">
-            {/* Background elements */}
-            <div className="absolute top-0 right-0 w-64 h-64 bg-white/10 rounded-full -translate-y-1/2 translate-x-1/2 blur-3xl" />
-            <div className="absolute bottom-0 left-0 w-64 h-64 bg-white/10 rounded-full translate-y-1/2 -translate-x-1/2 blur-3xl" />
+      <section className="py-32 max-w-7xl mx-auto px-4">
+         <div className="bg-[#349156] rounded-[4rem] p-16 md:p-32 text-center relative overflow-hidden shadow-[0_50px_50px_rgba(52,145,86,0.2)]">
+            <div className="absolute top-0 right-0 w-96 h-96 bg-white/10 rounded-full -translate-y-1/2 translate-x-1/2 blur-[100px]" />
+            <div className="absolute bottom-0 left-0 w-96 h-96 bg-black/5 rounded-full translate-y-1/2 -translate-x-1/2 blur-[100px]" />
             
-            <div className="relative z-10 space-y-8">
-               <h2 className="text-4xl md:text-6xl font-extrabold text-white leading-tight">Ready to transform how <br /> you learn?</h2>
-               <p className="text-white/80 text-xl max-w-2xl mx-auto">Join NotoSpace today and start building your knowledge base with the best collaborative tools.</p>
-               <div className="flex flex-col md:flex-row items-center justify-center gap-4">
-                  <button className="px-10 py-5 bg-white text-[#349156] rounded-2xl font-bold text-lg hover:bg-gray-50 transition shadow-xl">Get Started for Free</button>
-                  <button className="px-10 py-5 bg-transparent border border-white/30 text-white rounded-2xl font-bold text-lg hover:bg-white/10 transition">Learn More</button>
+            <div className="relative z-10 space-y-12">
+               <h2 className="text-5xl md:text-7xl font-black text-white leading-[1.1] tracking-tighter">Start your journey <br /> with excellence.</h2>
+               <p className="text-white/80 text-2xl max-w-2xl mx-auto font-medium">Join NotoSpace today and transform how you study forever.</p>
+               <div className="flex flex-col md:flex-row items-center justify-center gap-6">
+                  <button className="w-full md:w-auto px-16 py-6 bg-white text-[#349156] rounded-3xl font-black text-xl hover:bg-gray-50 hover:scale-105 transition-all shadow-2xl">Create Free Account</button>
+                  <button className="w-full md:w-auto px-16 py-6 bg-transparent border-2 border-white/40 text-white rounded-3xl font-black text-xl hover:bg-white/10 transition">Contact Sales</button>
                </div>
             </div>
          </div>
       </section>
 
       {/* Footer */}
-      <footer className="py-20 bg-gray-900 text-white font-poppins">
-        <div className="max-w-7xl mx-auto px-4 grid grid-cols-1 md:grid-cols-4 gap-12">
-            <div className="space-y-6">
-               <div className="flex items-center gap-2">
-                <GraduationCap className="w-8 h-8 text-[#349156]" />
-                <span className="text-2xl font-bold tracking-tight">NotoSpace</span>
+      <footer className="py-24 bg-gray-900 text-white">
+        <div className="max-w-7xl mx-auto px-4 grid grid-cols-1 md:grid-cols-4 gap-20">
+            <div className="space-y-8">
+               <div className="flex items-center gap-3">
+                <div className="w-12 h-12 bg-[#349156] rounded-2xl flex items-center justify-center rotate-3 shadow-lg shadow-[#349156]/20">
+                  <GraduationCap className="w-7 h-7 text-white" />
+                </div>
+                <span className="text-3xl font-black tracking-tighter">NotoSpace</span>
                </div>
-               <p className="text-gray-400 text-sm leading-relaxed">
-                  The complete digital ecosystem for modern students and dedicated educators.
+               <p className="text-gray-500 text-lg leading-relaxed font-medium">
+                  Empowering the next generation of global learners through collaboration.
                </p>
             </div>
             <div>
-               <h4 className="text-lg font-bold mb-6 underline decoration-[#349156] underline-offset-8">Platform</h4>
-               <ul className="space-y-4 text-gray-400 text-sm">
-                  <li><a href="#features" className="hover:text-[#349156] transition">Features</a></li>
-                  <li><a href="#hero" className="hover:text-[#349156] transition">Note Sharing</a></li>
-                  <li><a href="#social-proof" className="hover:text-[#349156] transition">Collaboration</a></li>
+               <h4 className="text-xl font-black mb-8 border-b-2 border-[#349156] w-fit">Platform</h4>
+               <ul className="space-y-6 text-gray-500 text-lg font-bold">
+                  <li><a href="#features" className="hover:text-white transition">Features</a></li>
+                  <li><a href="#hero" className="hover:text-white transition">Dashboard</a></li>
+                  <li><a href="#social-proof" className="hover:text-white transition">Community</a></li>
                </ul>
             </div>
             <div>
-               <h4 className="text-lg font-bold mb-6 underline decoration-[#349156] underline-offset-8">Support</h4>
-               <ul className="space-y-4 text-gray-400 text-sm">
-                  <li><a href="#faq" className="hover:text-[#349156] transition">FAQ</a></li>
-                  <li><Link to="#" className="hover:text-[#349156] transition">Contact Us</Link></li>
-                  <li><Link to="#" className="hover:text-[#349156] transition">Privacy Policy</Link></li>
+               <h4 className="text-xl font-black mb-8 border-b-2 border-[#349156] w-fit">Support</h4>
+               <ul className="space-y-6 text-gray-500 text-lg font-bold">
+                  <li><a href="#faq" className="hover:text-white transition">FAQ</a></li>
+                  <li><Link to="#" className="hover:text-white transition">Contact</Link></li>
+                  <li><Link to="#" className="hover:text-white transition">Legal</Link></li>
                </ul>
             </div>
             <div>
-               <h4 className="text-lg font-bold mb-6 underline decoration-[#349156] underline-offset-8">Stay Updated</h4>
-               <p className="text-gray-400 text-sm mb-4">Connect with us for learning tips and updates.</p>
-               <div className="flex bg-white/10 rounded-xl p-1.5 border border-white/10">
-                  <input type="email" placeholder="Your email.." className="bg-transparent border-none focus:outline-none px-3 text-sm flex-1" />
-                  <button className="px-5 py-2.5 bg-[#349156] rounded-lg text-sm font-bold hover:bg-[#2a7a45] transition">Join</button>
+               <h4 className="text-xl font-black mb-8 border-b-2 border-[#349156] w-fit">Join Us</h4>
+               <p className="text-gray-500 text-lg mb-6 font-medium">Get the latest updates first.</p>
+               <div className="flex bg-white/5 rounded-2xl p-2 border border-white/10">
+                  <input type="email" placeholder="Email" className="bg-transparent border-none focus:outline-none px-4 text-lg flex-1" />
+                  <button className="px-6 py-3 bg-[#349156] rounded-xl text-md font-black hover:bg-[#2a7a45] transition">Sub</button>
                </div>
             </div>
         </div>
-        <div className="max-w-7xl mx-auto px-4 mt-20 pt-8 border-t border-white/5 text-center text-gray-500 text-sm">
-           &copy; 2026 NotoSpace. All rights reserved.
+        <div className="max-w-7xl mx-auto px-4 mt-32 pt-12 border-t border-white/5 text-center text-gray-600 font-bold">
+           &copy; 2026 NotoSpace. Pure Innovation.
         </div>
       </footer>
     </div>
