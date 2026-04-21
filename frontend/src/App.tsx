@@ -1,5 +1,6 @@
 import { Route, Routes } from "react-router-dom";
 import Login from "./pages/login";
+import Home from "./pages/Home";
 import Signup from "./pages/signup";
 import Dashboard from "./dashboards/dashboard";
 import PageNotFound from "./components/pagenotfound";
@@ -55,13 +56,16 @@ const App = () => {
       <Routes>
         {/* Public routes */}
         <Route path="/" element={
-          <PublicRoute>
-            <Login />
-          </PublicRoute>
+            <Home />
         } />
         <Route path="/signup" element={
           <PublicRoute>
             <Signup />
+          </PublicRoute>
+        } />
+        <Route path="/login" element={
+          <PublicRoute>
+            <Login />
           </PublicRoute>
         } />
 
