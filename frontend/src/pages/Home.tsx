@@ -86,30 +86,30 @@ const Home = () => {
           <div id="hero" className="flex flex-col md:flex-row items-center gap-16 relative">
             
             {/* Left Content */}
-            <div className="flex-1 space-y-10 z-10 animate-in fade-in slide-in-from-left duration-1000">
-              <div className="space-y-6">
+            <div className="flex-1 space-y-8 z-10 animate-in fade-in slide-in-from-left duration-1000">
+              <div className="space-y-4">
                 <span className="inline-block px-4 py-1 bg-[#349156]/10 text-[#349156] rounded-full font-bold text-xs tracking-widest uppercase">The future of study</span>
-                <h1 className="text-6xl md:text-8xl font-black leading-[1.05] text-gray-900 tracking-tight">
+                <h1 className="text-5xl md:text-6xl font-black leading-tight text-gray-900 tracking-tight">
                   Master Your <br />
                   <span className="text-[#349156]">Education</span> with <br />
                   NotoSpace.
                 </h1>
-                <p className="text-xl text-gray-500 max-w-md leading-relaxed font-medium opacity-80">
+                <p className="text-lg text-gray-500 max-w-md leading-relaxed font-medium opacity-80">
                   Join the most innovative collaborative workspace built for students to share, learn, and excel together.
                 </p>
               </div>
 
-              <div className="flex flex-col sm:flex-row items-center gap-8">
-                <button className="w-full sm:w-auto px-12 py-5 bg-[#349156] text-white rounded-2xl font-black text-lg hover:bg-[#2a7a45] transition-all hover:translate-y-[-4px] hover:shadow-2xl shadow-xl shadow-[#349156]/30 flex items-center justify-center gap-3 group">
+              <div className="flex flex-col sm:flex-row items-center gap-6">
+                <button className="w-full sm:w-auto px-10 py-4 bg-[#349156] text-white rounded-2xl font-black text-lg hover:bg-[#2a7a45] transition-all hover:translate-y-[-4px] hover:shadow-2xl shadow-xl shadow-[#349156]/30 flex items-center justify-center gap-3 group">
                   Start Learning Free <ArrowRight className="w-6 h-6 group-hover:translate-x-2 transition-transform" />
                 </button>
                 <button className="flex items-center gap-4 group">
-                   <div className="w-14 h-14 rounded-full bg-white border-2 border-gray-100 flex items-center justify-center shadow-lg group-hover:border-[#349156] transition-colors">
-                      <div className="w-10 h-10 rounded-full border-2 border-[#349156]/20 flex items-center justify-center group-hover:bg-[#349156]/10 transition-colors">
-                         <Play className="w-4 h-4 fill-[#349156] text-[#349156] ml-1" />
+                   <div className="w-12 h-12 rounded-full bg-white border border-gray-200 flex items-center justify-center shadow-lg group-hover:border-[#349156] transition-colors">
+                      <div className="w-8 h-8 rounded-full border border-[#349156]/20 flex items-center justify-center group-hover:bg-[#349156]/10 transition-colors">
+                         <Play className="w-3 h-3 fill-[#349156] text-[#349156] ml-0.5" />
                       </div>
                    </div>
-                   <span className="font-bold text-gray-700 group-hover:text-[#349156] transition-colors">Live Demo</span>
+                   <span className="font-bold text-gray-600 group-hover:text-[#349156] transition-colors">Watch Tour</span>
                 </button>
               </div>
             </div>
@@ -117,50 +117,59 @@ const Home = () => {
             {/* Right Innovative UI Section */}
             <div className="flex-1 relative animate-in fade-in slide-in-from-right duration-1000">
               {/* Main Student Image */}
-              <div className="relative z-10 scale-110">
+              <div className="relative z-10">
                 <img 
                   src="/hero.png" 
                   alt="Student Studying" 
-                  className="w-full h-auto object-contain drop-shadow-[0_35px_35px_rgba(0,0,0,0.1)]"
+                  className="w-full h-auto object-contain drop-shadow-[0_20px_20px_rgba(0,0,0,0.05)]"
                 />
               </div>
 
               {/* Innovative Floating UI Elements */}
               
-              {/* Chat Bubble 1 */}
-              <div className="absolute top-20 right-[-20px] bg-white p-5 rounded-3xl shadow-2xl z-20 animate-bounce duration-5s max-w-[200px]" style={{ animationDuration: '4s' }}>
-                <div className="font-black text-2xl text-gray-900 leading-tight">Can I <br /> Share this?</div>
-                <div className="absolute -bottom-2 right-10 w-6 h-6 bg-white rotate-45" />
+              {/* Note Shared Tag */}
+              <div className="absolute top-10 right-[-10px] bg-white p-4 rounded-2xl shadow-2xl z-20 animate-bounce max-w-[180px] border border-gray-50" style={{ animationDuration: '4s' }}>
+                <div className="font-black text-lg text-gray-900 flex items-center gap-2 tracking-tight">
+                  <div className="w-2 h-2 bg-[#349156] rounded-full animate-pulse" />
+                  Note Shared!
+                </div>
+                <div className="absolute -bottom-2 right-8 w-4 h-4 bg-white rotate-45 border-r border-b border-gray-50" />
               </div>
 
-              {/* Chat Bubble 2 (Green) */}
-              <div className="absolute bottom-40 right-[40px] bg-gray-900 p-5 rounded-3xl shadow-2xl z-20 animate-bounce delay-700" style={{ animationDuration: '5s' }}>
-                <div className="font-bold text-xl text-white">Help You!</div>
-                <div className="absolute -top-2 left-10 w-6 h-6 bg-gray-900 rotate-45" />
+              {/* Resource Added Tag */}
+              <div className="absolute bottom-32 right-[20px] bg-gray-900 p-4 rounded-2xl shadow-2xl z-20 animate-bounce delay-700 border border-gray-800" style={{ animationDuration: '5s' }}>
+                <div className="font-bold text-white text-sm flex items-center gap-2">
+                  <BookOpen className="w-3 h-3" />
+                  Resource Added!
+                </div>
+                <div className="absolute -top-2 left-6 w-4 h-4 bg-gray-900 rotate-45" />
               </div>
 
-              {/* Floating User Card */}
-              <div className="absolute bottom-10 left-[-40px] bg-white/90 backdrop-blur-md p-4 rounded-[2rem] shadow-2xl z-20 border border-gray-100 space-y-4 animate-in slide-in-from-bottom duration-1000">
+              {/* Floating Collaborators List */}
+              <div className="absolute bottom-10 left-[-20px] bg-white/95 backdrop-blur-md p-4 rounded-3xl shadow-2xl z-20 border border-gray-100 space-y-4 animate-in slide-in-from-bottom duration-1000">
+                 <span className="text-[10px] font-black uppercase text-gray-400 tracking-widest block mb-2">Collaborators</span>
                  <div className="flex items-center gap-3">
-                    <div className="w-10 h-10 rounded-full bg-gray-200 overflow-hidden border-2 border-white shadow-sm">
+                    <div className="w-8 h-8 rounded-full bg-gray-200 overflow-hidden border-2 border-white shadow-sm">
                        <img src="https://i.pravatar.cc/100?img=32" alt="User" />
                     </div>
-                    <div className="w-24 h-2 bg-gray-100 rounded-full overflow-hidden">
+                    <div className="w-20 h-1.5 bg-gray-100 rounded-full overflow-hidden">
                        <div className="w-full h-full bg-[#349156] rounded-full" />
                     </div>
                  </div>
                  <div className="flex items-center gap-3">
-                    <div className="w-10 h-10 rounded-full bg-gray-200 overflow-hidden border-2 border-white shadow-sm">
+                    <div className="w-8 h-8 rounded-full bg-gray-200 overflow-hidden border-2 border-white shadow-sm">
                        <img src="https://i.pravatar.cc/100?img=45" alt="User" />
                     </div>
-                    <div className="w-20 h-2 bg-gray-100 rounded-full" />
+                    <div className="w-16 h-1.5 bg-gray-100 rounded-full overflow-hidden">
+                       <div className="w-[70%] h-full bg-[#349156] rounded-full" />
+                    </div>
                  </div>
                  <div className="flex items-center gap-3">
-                    <div className="w-10 h-10 rounded-full bg-gray-200 overflow-hidden border-2 border-white shadow-sm">
+                    <div className="w-8 h-8 rounded-full bg-gray-200 overflow-hidden border-2 border-white shadow-sm">
                        <img src="https://i.pravatar.cc/100?img=12" alt="User" />
                     </div>
-                    <div className="flex-1 flex justify-center">
-                       <div className="w-6 h-6 bg-red-400 rounded-md flex items-center justify-center text-white text-[10px]">&times;</div>
+                    <div className="w-12 h-1.5 bg-gray-100 rounded-full overflow-hidden">
+                       <div className="w-[40%] h-full bg-[#349156] rounded-full" />
                     </div>
                  </div>
               </div>
