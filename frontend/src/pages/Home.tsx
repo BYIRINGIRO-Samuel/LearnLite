@@ -89,41 +89,41 @@ const Home = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-white font-sans text-gray-900">
-      {/* Hero Section & Navbar Container */}
+    <div className="min-h-screen bg-white font-poppins text-gray-900">
+      {/* Hero Section & Navbar Integrated */}
       <section className="relative pt-6 pb-20 overflow-hidden bg-[#f7faf9]">
         <div className="max-w-7xl mx-auto px-4 relative">
           
-          {/* Framed Navbar */}
-          <nav className="mt-4 mb-20 bg-white border border-[#1DA1F2]/10 rounded-2xl px-8 py-4 flex items-center justify-between shadow-sm animate-in fade-in slide-in-from-top duration-700">
+          {/* Framed Navbar - No top space, integrated into hero */}
+          <nav className="bg-white border border-[#349156]/10 rounded-2xl px-8 py-5 flex items-center justify-between shadow-sm animate-in fade-in slide-in-from-top duration-700">
             <div className="flex items-center gap-2">
-              <div className="p-1.5 bg-[#1DA1F2]/10 rounded-lg">
-                <BookOpen className="w-6 h-6 text-[#1DA1F2]" />
+              <div className="p-1.5 bg-[#349156]/10 rounded-lg">
+                <BookOpen className="w-6 h-6 text-[#349156]" />
               </div>
               <span className="text-xl font-bold text-gray-800">EduLe</span>
             </div>
 
             <div className="hidden md:flex items-center gap-10">
-              <Link to="/" className="text-[#1DA1F2] font-semibold text-sm">Home</Link>
-              <Link to="#" className="text-gray-500 font-medium text-sm hover:text-[#1DA1F2] transition">All Course</Link>
-              <Link to="#" className="text-gray-500 font-medium text-sm hover:text-[#1DA1F2] transition">Pages</Link>
-              <Link to="#" className="text-gray-500 font-medium text-sm hover:text-[#1DA1F2] transition">Blog</Link>
-              <Link to="#" className="text-gray-500 font-medium text-sm hover:text-[#1DA1F2] transition">Contact</Link>
+              <Link to="/" className="text-[#349156] font-semibold text-sm">Home</Link>
+              <Link to="#" className="text-gray-500 font-medium text-sm hover:text-[#349156] transition">All Course</Link>
+              <Link to="#" className="text-gray-500 font-medium text-sm hover:text-[#349156] transition">Pages</Link>
+              <Link to="#" className="text-gray-500 font-medium text-sm hover:text-[#349156] transition">Blog</Link>
+              <Link to="#" className="text-gray-500 font-medium text-sm hover:text-[#349156] transition">Contact</Link>
             </div>
 
             <div className="flex items-center gap-6">
-              <Link to="/login" className="text-gray-600 font-semibold text-sm hover:text-[#1DA1F2] transition">Sign In</Link>
-              <Link to="/signup" className="px-6 py-2.5 border border-[#1DA1F2]/30 text-[#1DA1F2] rounded-xl font-bold text-sm hover:bg-[#1DA1F2] hover:text-white transition">
+              <Link to="/login" className="text-gray-600 font-semibold text-sm hover:text-[#349156] transition">Sign In</Link>
+              <Link to="/signup" className="px-6 py-2.5 border border-[#349156]/30 text-[#349156] rounded-xl font-bold text-sm hover:bg-[#349156] hover:text-white transition">
                 Sign Up
               </Link>
             </div>
           </nav>
 
-          <div className="flex flex-col md:flex-row items-center gap-12 relative pb-10">
+          <div className="flex flex-col md:flex-row items-center gap-12 relative pt-20 pb-10">
             {/* Left Content */}
             <div className="flex-1 space-y-8 z-10 animate-in fade-in slide-in-from-left duration-700">
               {/* Orange Dots Decoration */}
-              <div className="absolute top-0 -left-10 opacity-30">
+              <div className="absolute top-10 -left-10 opacity-30">
                  <div className="grid grid-cols-4 gap-2">
                    {[...Array(12)].map((_, i) => (
                      <div key={i} className="w-2 h-1 bg-orange-400 rounded-full rotate-45" />
@@ -132,15 +132,10 @@ const Home = () => {
               </div>
 
               <div className="space-y-6">
-                <span className="text-[#1DA1F2] font-bold tracking-widest uppercase text-xs opacity-70">Start your journey</span>
-                <h1 className="text-4xl md:text-7xl font-extrabold leading-tight text-gray-900">
+                <span className="text-[#349156] font-bold tracking-widest uppercase text-xs opacity-70">Start your journey</span>
+                <h1 className="text-5xl md:text-7xl font-extrabold leading-tight text-gray-900">
                   Sharpen Your <br />
-                  <span className="text-[#1DA1F2] relative">
-                    Success
-                    <svg className="absolute -bottom-2 left-0 w-full" height="8" viewBox="0 0 100 8" preserveAspectRatio="none">
-                      <path d="M0 7C30 7 70 2 100 2" stroke="#1DA1F2" strokeWidth="4" fill="none" strokeLinecap="round" />
-                    </svg>
-                  </span> with <br />
+                  <span className="text-[#349156]">Success</span> with <br />
                   NotoSpace.
                 </h1>
                 <p className="text-xl text-gray-500 max-w-md leading-relaxed font-light">
@@ -149,7 +144,7 @@ const Home = () => {
               </div>
 
               <div className="pt-4">
-                <button className="px-10 py-4 bg-[#1DA1F2] text-white rounded-xl font-bold text-lg hover:bg-[#1991DA] transition shadow-xl shadow-[#1DA1F2]/30 flex items-center gap-2 group">
+                <button className="px-10 py-4 bg-[#349156] text-white rounded-xl font-bold text-lg hover:bg-[#2a7a45] transition shadow-xl shadow-[#349156]/30 flex items-center gap-2 group">
                   Get Started Now <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
                 </button>
               </div>
@@ -166,13 +161,13 @@ const Home = () => {
               </div>
 
               {/* Arrows Decoration */}
-              <div className="absolute top-1/4 left-0 text-[#1DA1F2] opacity-20 z-0">
+              <div className="absolute top-1/4 left-0 text-[#349156] opacity-20 z-0">
                  <svg width="60" height="60" viewBox="0 0 60 60" fill="none">
                    <path d="M10 50C25 45 35 25 50 10" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeDasharray="4 4" />
                    <path d="M45 10H50V15" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
                  </svg>
               </div>
-              <div className="absolute bottom-1/4 right-0 text-[#1DA1F2] opacity-20 z-0">
+              <div className="absolute bottom-1/4 right-0 text-[#349156] opacity-20 z-0">
                  <svg width="60" height="60" viewBox="0 0 60 60" fill="none" className="rotate-90">
                    <path d="M10 50C25 45 35 25 50 10" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeDasharray="4 4" />
                    <path d="M45 10H50V15" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
@@ -191,7 +186,7 @@ const Home = () => {
         <div className="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-8">
           <div>
             <h2 className="text-4xl font-bold mb-4 flex items-center gap-3">
-              All <span className="text-[#1DA1F2] border-b-4 border-[#1DA1F2]/20">Courses</span> of EduLe
+              All <span className="text-[#349156] border-b-4 border-[#349156]/20">Courses</span> of EduLe
             </h2>
           </div>
           <div className="flex-1 max-w-xl">
@@ -199,9 +194,9 @@ const Home = () => {
                 <input 
                   type="text" 
                   placeholder="Search your course" 
-                  className="w-full px-6 py-4 bg-gray-50 border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-[#1DA1F2]/50 pr-14"
+                  className="w-full px-6 py-4 bg-gray-50 border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-[#349156]/50 pr-14"
                 />
-                <button className="absolute right-2 top-2 bottom-2 aspect-square bg-[#1DA1F2] text-white rounded-lg flex items-center justify-center hover:bg-[#1991DA] transition">
+                <button className="absolute right-2 top-2 bottom-2 aspect-square bg-[#349156] text-white rounded-lg flex items-center justify-center hover:bg-[#2a7a45] transition">
                   <Search className="w-5 h-5" />
                 </button>
              </div>
@@ -214,7 +209,7 @@ const Home = () => {
           {categories.map((cat, i) => (
             <button 
               key={cat} 
-              className={`px-8 py-3 rounded-full whitespace-nowrap transition-all font-medium ${i === 0 ? 'bg-[#1DA1F2] text-white shadow-lg shadow-[#1DA1F2]/30' : 'bg-gray-100 text-gray-600 hover:bg-gray-200'}`}
+              className={`px-8 py-3 rounded-full whitespace-nowrap transition-all font-medium ${i === 0 ? 'bg-[#349156] text-white shadow-lg shadow-[#349156]/30' : 'bg-gray-100 text-gray-600 hover:bg-gray-200'}`}
             >
               {cat}
             </button>
@@ -232,7 +227,7 @@ const Home = () => {
                   alt={course.title} 
                   className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
                 />
-                <div className="absolute top-4 right-4 bg-white/90 backdrop-blur px-3 py-1 rounded-full text-xs font-bold text-[#1DA1F2]">
+                <div className="absolute top-4 right-4 bg-white/90 backdrop-blur px-3 py-1 rounded-full text-xs font-bold text-[#349156]">
                    {course.category}
                 </div>
               </div>
@@ -245,18 +240,18 @@ const Home = () => {
                   <div className="ml-auto px-3 py-1 bg-green-50 text-green-600 text-xs font-bold rounded-lg uppercase">Science</div>
                 </div>
                 
-                <h3 className="text-xl font-bold leading-tight group-hover:text-[#1DA1F2] transition-colors line-clamp-2">
+                <h3 className="text-xl font-bold leading-tight group-hover:text-[#349156] transition-colors line-clamp-2">
                   {course.title}
                 </h3>
 
                 <div className="flex items-center justify-between text-sm text-gray-500 mb-6">
-                  <div className="flex items-center gap-1.5"><Clock className="w-4 h-4 text-[#1DA1F2]" /> {course.duration}</div>
-                  <div className="flex items-center gap-1.5"><BookOpen className="w-4 h-4 text-[#1DA1F2]" /> {course.lectures}</div>
+                  <div className="flex items-center gap-1.5"><Clock className="w-4 h-4 text-[#349156]" /> {course.duration}</div>
+                  <div className="flex items-center gap-1.5"><BookOpen className="w-4 h-4 text-[#349156]" /> {course.lectures}</div>
                 </div>
 
                 <div className="pt-6 border-t border-gray-100 flex items-center justify-between">
                   <div className="flex items-center gap-2">
-                    <span className="text-2xl font-bold text-[#1DA1F2]">{course.price}</span>
+                    <span className="text-2xl font-bold text-[#349156]">{course.price}</span>
                     {course.oldPrice && <span className="text-sm text-gray-400 line-through">{course.oldPrice}</span>}
                   </div>
                   <div className="flex items-center gap-1 font-bold text-sm">
@@ -269,7 +264,7 @@ const Home = () => {
         </div>
 
         <div className="mt-16 text-center">
-            <button className="px-10 py-4 bg-gray-100 text-gray-900 rounded-full font-bold hover:bg-[#1DA1F2] hover:text-white transition shadow-lg flex items-center gap-2 mx-auto">
+            <button className="px-10 py-4 bg-gray-100 text-gray-900 rounded-full font-bold hover:bg-[#349156] hover:text-white transition shadow-lg flex items-center gap-2 mx-auto">
                 Other Course <ArrowRight className="w-5 h-5" />
             </button>
         </div>
@@ -280,7 +275,7 @@ const Home = () => {
         <div className="max-w-7xl mx-auto px-4 grid grid-cols-1 md:grid-cols-4 gap-12">
             <div className="space-y-6">
                <div className="flex items-center gap-2">
-                <BookOpen className="w-8 h-8 text-[#1DA1F2]" />
+                <BookOpen className="w-8 h-8 text-[#349156]" />
                 <span className="text-2xl font-bold">EduLe</span>
                </div>
                <p className="text-gray-400 text-sm leading-relaxed">
@@ -290,19 +285,19 @@ const Home = () => {
             <div>
                <h4 className="text-lg font-bold mb-6">Category</h4>
                <ul className="space-y-4 text-gray-400 text-sm">
-                  <li><Link to="#" className="hover:text-[#1DA1F2] transition">Development</Link></li>
-                  <li><Link to="#" className="hover:text-[#1DA1F2] transition">Business</Link></li>
-                  <li><Link to="#" className="hover:text-[#1DA1F2] transition">Design</Link></li>
-                  <li><Link to="#" className="hover:text-[#1DA1F2] transition">Marketing</Link></li>
+                  <li><Link to="#" className="hover:text-[#349156] transition">Development</Link></li>
+                  <li><Link to="#" className="hover:text-[#349156] transition">Business</Link></li>
+                  <li><Link to="#" className="hover:text-[#349156] transition">Design</Link></li>
+                  <li><Link to="#" className="hover:text-[#349156] transition">Marketing</Link></li>
                </ul>
             </div>
             <div>
                <h4 className="text-lg font-bold mb-6">Quick Links</h4>
                <ul className="space-y-4 text-gray-400 text-sm">
-                  <li><Link to="#" className="hover:text-[#1DA1F2] transition">About Us</Link></li>
-                  <li><Link to="#" className="hover:text-[#1DA1F2] transition">Contact Us</Link></li>
-                  <li><Link to="#" className="hover:text-[#1DA1F2] transition">FAQ</Link></li>
-                  <li><Link to="#" className="hover:text-[#1DA1F2] transition">Terms</Link></li>
+                  <li><Link to="#" className="hover:text-[#349156] transition">About Us</Link></li>
+                  <li><Link to="#" className="hover:text-[#349156] transition">Contact Us</Link></li>
+                  <li><Link to="#" className="hover:text-[#349156] transition">FAQ</Link></li>
+                  <li><Link to="#" className="hover:text-[#349156] transition">Terms</Link></li>
                </ul>
             </div>
             <div>
@@ -310,7 +305,7 @@ const Home = () => {
                <p className="text-gray-400 text-sm mb-4">Connect with us and get the latest news</p>
                <div className="flex bg-white/10 rounded-lg p-1.5">
                   <input type="email" placeholder="Email.." className="bg-transparent border-none focus:outline-none px-3 text-sm flex-1" />
-                  <button className="px-4 py-2 bg-[#1DA1F2] rounded-md text-sm font-bold">Join</button>
+                  <button className="px-4 py-2 bg-[#349156] rounded-md text-sm font-bold">Join</button>
                </div>
             </div>
         </div>
