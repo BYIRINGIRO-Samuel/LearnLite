@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Search, ChevronDown, ChevronUp, BookOpen, Clock, Users, Star, ArrowRight, Shield, Zap, Sparkles, GraduationCap, Play } from 'lucide-react';
+import { Search, ChevronDown, ChevronUp, BookOpen, Clock, Users, Star, ArrowRight, Shield, Zap, Sparkles, GraduationCap, Play, FileText, Globe, CheckCircle2 } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
 const Home = () => {
@@ -7,24 +7,34 @@ const Home = () => {
 
   const features = [
     {
+      id: "01",
       title: 'Smart Note Organization',
-      description: 'Automatically categorize and tag your notes with our AI-powered organization system.',
-      icon: <Sparkles className="w-6 h-6 text-[#349156]" />
+      description: 'AI-powered tagging and categorization for your academic notes.',
+      benefit: 'Save 5+ hours/week'
     },
     {
+      id: "02",
       title: 'Real-time Collaboration',
-      description: 'Work together with classmates on shared assignments and projects in real-time.',
-      icon: <Users className="w-6 h-6 text-[#349156]" />
+      description: 'Work together with classmates on shared assignments instantly.',
+      benefit: '100% Sync Accuracy'
     },
     {
+      id: "03",
       title: 'Instant Resource Sharing',
-      description: 'Upload and share PDFs, videos, and study guides with your community instantly.',
-      icon: <BookOpen className="w-6 h-6 text-[#349156]" />
+      description: 'Upload and share PDFs, videos, and study guides with ease.',
+      benefit: 'Unlimited Downloads'
     },
     {
+      id: "04",
       title: 'Secure Progress Tracking',
-      description: 'Monitor your learning journey with end-to-end encrypted progress analytics.',
-      icon: <Shield className="w-6 h-6 text-[#349156]" />
+      description: 'Monitor your learning journey with end-to-end encrypted analytics.',
+      benefit: 'Privacy Guaranteed'
+    },
+    {
+      id: "05",
+      title: 'Cross-Device Sync',
+      description: 'Access your notes from mobile, tablet, or desktop anywhere.',
+      benefit: 'Offline Ready'
     }
   ];
 
@@ -40,6 +50,14 @@ const Home = () => {
     {
       question: "Can I use NotoSpace for group projects?",
       answer: "Yes! NotoSpace's core feature is real-time collaboration. You can create shared notebooks and work together with your team synchronously."
+    },
+    {
+      question: "How do I invite my classmates?",
+      answer: "Sharing is easy! Simply generate a unique workspace link or invite them directly via email from your dashboard. You can set permissions as view-only or full editor."
+    },
+    {
+      question: "Can I access my notes offline?",
+      answer: "Yes, NotoSpace supports offline mode. Any changes you make while offline will automatically sync once you're back online."
     }
   ];
 
@@ -48,7 +66,7 @@ const Home = () => {
   return (
     <div className="min-h-screen bg-white font-poppins text-gray-900 overflow-x-hidden">
       
-      {/* Fixed Navbar - Slightly gray with glass effect */}
+      {/* Fixed Navbar */}
       <div className="fixed top-0 left-0 right-0 z-50 flex justify-center px-4 pt-6 pointer-events-none">
         <nav className="max-w-7xl w-full bg-gray-100/90 backdrop-blur-xl border border-gray-200 rounded-3xl px-8 py-4 flex items-center justify-between shadow-lg pointer-events-auto animate-in fade-in slide-in-from-top duration-700">
           <div className="flex items-center gap-3">
@@ -74,15 +92,14 @@ const Home = () => {
         </nav>
       </div>
 
-      {/* Hero Section */}
-      <section className="relative pt-40 pb-32 overflow-hidden bg-white">
+      {/* Hero Section - Reduced space under navbar to 5px conceptually */}
+      <section className="relative pt-[92px] pb-32 overflow-hidden bg-white">
         {/* Background Innovative Shapes */}
         <div className="absolute top-0 right-0 w-1/2 h-full bg-[#f7faf9] -z-10 rounded-l-[100px] overflow-hidden">
            <div className="absolute top-1/4 right-0 w-96 h-96 bg-[#349156]/5 rounded-full blur-3xl animate-pulse" />
-           <div className="absolute bottom-1/4 left-0 w-64 h-64 bg-orange-400/5 rounded-full blur-3xl" />
         </div>
 
-        <div className="max-w-7xl mx-auto px-4 relative">
+        <div className="max-w-7xl mx-auto px-4 relative pt-[5px]">
           <div id="hero" className="flex flex-col md:flex-row items-center gap-16 relative">
             
             {/* Left Content */}
@@ -116,7 +133,6 @@ const Home = () => {
 
             {/* Right Innovative UI Section */}
             <div className="flex-1 relative animate-in fade-in slide-in-from-right duration-1000">
-              {/* Main Student Image */}
               <div className="relative z-10">
                 <img 
                   src="/hero.png" 
@@ -124,8 +140,6 @@ const Home = () => {
                   className="w-full h-auto object-contain drop-shadow-[0_20px_20px_rgba(0,0,0,0.05)]"
                 />
               </div>
-
-              {/* Innovative Floating UI Elements */}
               
               {/* Note Shared Tag */}
               <div className="absolute top-10 right-[-10px] bg-white p-4 rounded-2xl shadow-2xl z-20 animate-bounce max-w-[180px] border border-gray-50" style={{ animationDuration: '4s' }}>
@@ -164,71 +178,65 @@ const Home = () => {
                        <div className="w-[70%] h-full bg-[#349156] rounded-full" />
                     </div>
                  </div>
-                 <div className="flex items-center gap-3">
-                    <div className="w-8 h-8 rounded-full bg-gray-200 overflow-hidden border-2 border-white shadow-sm">
-                       <img src="https://i.pravatar.cc/100?img=12" alt="User" />
-                    </div>
-                    <div className="w-12 h-1.5 bg-gray-100 rounded-full overflow-hidden">
-                       <div className="w-[40%] h-full bg-[#349156] rounded-full" />
-                    </div>
-                 </div>
               </div>
-
-              {/* Shapes */}
-              <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[120%] h-[120%] bg-white/50 rounded-full blur-3xl -z-10" />
             </div>
           </div>
         </div>
       </section>
 
-      {/* Social Proof Section */}
+      {/* Social Proof */}
       <section id="social-proof" className="py-24 border-y border-gray-100 bg-white">
         <div className="max-w-7xl mx-auto px-4">
           <div className="text-center mb-12">
             <h2 className="text-sm font-black text-gray-400 uppercase tracking-[0.5em] mb-4">Trusted Worldwide</h2>
-            <div className="flex flex-wrap justify-center items-center gap-12 md:gap-24 opacity-40 grayscale hover:grayscale-0 transition-all duration-700">
+            <div className="flex flex-wrap justify-center items-center gap-12 md:gap-24 opacity-40 grayscale">
               {partners.map(p => (
-                <span key={p} className="text-2xl font-black text-gray-900 hover:text-[#349156] cursor-default transition-colors">{p}</span>
+                <span key={p} className="text-2xl font-black text-gray-900">{p}</span>
               ))}
             </div>
-          </div>
-          <div className="flex justify-center mt-12">
-             <div className="bg-gray-100/50 px-8 py-4 rounded-full flex items-center gap-6 border border-gray-200 shadow-sm">
-                <div className="flex -space-x-3">
-                   {[1,2,3,4,5].map(i => (
-                     <div key={i} className="w-10 h-10 rounded-full border-2 border-white bg-gray-200 overflow-hidden shadow-sm">
-                        <img src={`https://i.pravatar.cc/100?img=${i+30}`} alt="User" />
-                     </div>
-                   ))}
-                </div>
-                <span className="text-sm font-bold text-gray-500">Join over <span className="text-gray-900 border-b-2 border-[#349156]">50,000+</span> active learners</span>
-             </div>
           </div>
         </div>
       </section>
 
-      {/* Features Section */}
+      {/* Features Table UI */}
       <section id="features" className="py-32 bg-white">
         <div className="max-w-7xl mx-auto px-4">
-          <div className="flex flex-col md:flex-row items-end justify-between mb-20 gap-10">
-            <div className="max-w-3xl">
-               <span className="text-[#349156] font-black text-sm tracking-[0.2em] uppercase">Core Features</span>
-               <h2 className="text-5xl md:text-7xl font-black mt-6 leading-tight tracking-tight">Tools built to <br /> make you <span className="text-[#349156]">Unstoppable</span></h2>
-            </div>
+          <div className="text-center mb-20">
+             <span className="text-[#349156] font-black text-sm tracking-[0.2em] uppercase">Core Features</span>
+             <h2 className="text-5xl font-black mt-6 leading-tight tracking-tight">How NotoSpace works for <span className="text-[#349156]">You</span></h2>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
-            {features.map((feature, i) => (
-              <div key={i} className="group relative p-10 rounded-[3rem] bg-[#f7faf9] border border-transparent hover:border-[#349156]/20 hover:bg-white hover:shadow-2xl transition-all duration-500">
-                <div className="w-16 h-16 bg-white rounded-[1.5rem] flex items-center justify-center mb-8 shadow-xl shadow-[#349156]/5 group-hover:scale-110 transition-transform group-hover:bg-[#349156] group-hover:text-white">
-                  <div className="group-hover:text-white transition-colors">
-                    {feature.icon}
-                  </div>
+          <div className="w-full overflow-x-auto">
+             <div className="min-w-[800px]">
+                {/* Table Header */}
+                <div className="grid grid-cols-12 bg-gray-50 border-y border-gray-200 py-6 px-10">
+                   <div className="col-span-1 text-xs font-black text-gray-400 uppercase tracking-widest">ID</div>
+                   <div className="col-span-4 text-xs font-black text-gray-400 uppercase tracking-widest">Feature Title</div>
+                   <div className="col-span-4 text-xs font-black text-gray-400 uppercase tracking-widest">Functionality</div>
+                   <div className="col-span-3 text-xs font-black text-gray-400 uppercase tracking-widest">Platform Benefit</div>
                 </div>
-                <h3 className="text-2xl font-black mb-4 group-hover:text-[#349156] transition-colors">{feature.title}</h3>
-                <p className="text-gray-500 text-sm leading-relaxed font-medium">{feature.description}</p>
-              </div>
-            ))}
+
+                {/* Table Rows */}
+                <div className="divide-y divide-gray-100 border-b border-gray-100">
+                   {features.map((feature) => (
+                     <div key={feature.id} className="grid grid-cols-12 py-8 px-10 items-center hover:bg-[#349156]/[0.02] transition-colors group">
+                        <div className="col-span-1 text-lg font-black text-gray-300 group-hover:text-[#349156] transition-colors">{feature.id}</div>
+                        <div className="col-span-4 pr-10">
+                           <h3 className="text-xl font-bold text-gray-900 group-hover:text-[#349156] transition-colors">{feature.title}</h3>
+                        </div>
+                        <div className="col-span-4 pr-10">
+                           <p className="text-gray-500 font-medium">{feature.description}</p>
+                        </div>
+                        <div className="col-span-3">
+                           <div className="inline-flex items-center gap-2 px-4 py-2 bg-[#349156]/10 text-[#349156] rounded-full text-xs font-black uppercase tracking-wider">
+                              <CheckCircle2 className="w-3 h-3" />
+                              {feature.benefit}
+                           </div>
+                        </div>
+                     </div>
+                   ))}
+                </div>
+             </div>
           </div>
         </div>
       </section>
