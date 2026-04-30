@@ -52,14 +52,6 @@ const TeacherOnboarding = () => {
     }
   };
 
-  const handleCourseSelect = (courseName: string) => {
-    setSelectedCourses(prev =>
-      prev.includes(courseName)
-        ? prev.filter(course => course !== courseName)
-        : [...prev, courseName]
-    );
-  };
-
   const handleAddClassWithCourses = () => {
     setError("");
     setSuccess("");

@@ -1,12 +1,9 @@
 //import Bottombar from '../components/Bottombar';
-import { useNavigate } from 'react-router-dom';
 import AdminLeftsidebar from '../components/adminleftsidebar';
 import AdminTopbar from '../components/AdminTopbar';
 import TeachersManagementSection from '../components/TeachersManagementSection';
 
 const ManageTeachers = () => {
-  const navigate = useNavigate();
-
   return (
     <div className="flex h-screen w-full overflow-hidden">
       <div className="hidden md:flex flex-shrink-0 overflow-y-auto hide-scrollbar">

@@ -37,6 +37,15 @@ const Upload = () => {
     courseName: '',
     file: null,
   });
+  const [userName, setUserName] = useState<string>("");
+
+  useEffect(() => {
+    const userStr = localStorage.getItem("user");
+    if (userStr) {
+      const user = JSON.parse(userStr);
+      setUserName(user.name || "");
+    }
+  }, []);
 
   // Fetch teacher's classes and courses
   useEffect(() => {
@@ -135,7 +144,7 @@ const Upload = () => {
         </div>
 
         <div className="hidden md:block">
-          <Topbar />
+          <Topbar userName={userName} />
         </div>
         <div className="border-b border-gray-200"></div>
 

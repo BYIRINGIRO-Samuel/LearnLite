@@ -46,6 +46,15 @@ const EditVideo = () => {
   const { id } = useParams();
   const [loading, setLoading] = useState(false);
   const [videoData, setVideoData] = useState<VideoData | null>(null);
+  const [userName, setUserName] = useState<string>("");
+
+  useEffect(() => {
+    const userStr = localStorage.getItem("user");
+    if (userStr) {
+      const user = JSON.parse(userStr);
+      setUserName(user.name || "");
+    }
+  }, []);
 
   useEffect(() => {
     const fetchVideoData = async () => {
@@ -106,7 +115,7 @@ const EditVideo = () => {
           <Teacherleftsidebar />
         </div>
         <div className="flex-1 flex flex-col overflow-hidden">
-          <Topbar />
+          <Topbar userName={userName} />
           <div className="flex-1 flex items-center justify-center">
             <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-blue-600"></div>
           </div>
@@ -122,7 +131,7 @@ const EditVideo = () => {
       </div>
       
       <div className="flex-1 flex flex-col overflow-hidden">
-        <Topbar />
+        <Topbar userName={userName} />
         
         <div className="flex-1 overflow-y-auto p-6 hide-scrollbar">
           <div className="max-w-3xl mx-auto">
@@ -237,4 +246,4 @@ const EditVideo = () => {
   );
 };
 
-export default EditVideo; 
+export default EditVideo;

@@ -23,6 +23,15 @@ const EditNote = () => {
     fileType: '',
     fileSize: ''
   });
+  const [userName, setUserName] = useState<string>("");
+
+  useEffect(() => {
+    const userStr = localStorage.getItem("user");
+    if (userStr) {
+      const user = JSON.parse(userStr);
+      setUserName(user.name || "");
+    }
+  }, []);
 
   
   useEffect(() => {
@@ -153,7 +162,7 @@ const EditNote = () => {
       </div>
       
       <div className="flex-1 flex flex-col overflow-hidden">
-        <Topbar />
+        <Topbar userName={userName} />
         
         <div className="flex-1 overflow-y-auto p-6 hide-scrollbar relative">
          
