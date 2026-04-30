@@ -27,7 +27,7 @@ import TrSettingsPage from "./pages/TrSettingsPage";
 import AdminOnboarding from "./pages/AdminOnboarding";
 import ProtectedRoute from "./components/ProtectedRoute";
 import PublicRoute from "./components/PublicRoute";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import TeacherOnboarding from "./pages/TeacherOnboarding";
@@ -38,10 +38,18 @@ import ManageStudents from "./pages/ManageStudents";
 import AdminNotifications from "./pages/AdminNotifications";
 import AdminSettings from "./pages/AdminSettings";
 import AdminProfile from "./pages/AdminProfile";
+import LoadingScreen from "./components/LoadingScreen";
 
 
 const App = () => {
+  const [loading, setLoading] = useState(true);
+
   useEffect(() => {
+    // Initial loading simulation
+    const timer = setTimeout(() => {
+      setLoading(false);
+    }, 3000);
+
     const unprotectedPaths = ["/", "/signup", "/login", "/unauthorized", "/not-found"];
     if (!unprotectedPaths.includes(window.location.pathname)) {
       const userStr = localStorage.getItem("user");
@@ -49,7 +57,13 @@ const App = () => {
         window.location.pathname = "/unauthorized";
       }
     }
+
+    return () => clearTimeout(timer);
   }, []);
+
+  if (loading) {
+    return <LoadingScreen />;
+  }
 
   return (
     <>
