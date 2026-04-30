@@ -30,8 +30,8 @@ const InnovativeLoader: React.FC = () => {
                 height: `${Math.max(12 - i * 0.5, 2)}px`,
                 top: '50%',
                 left: '50%',
-                // Positioned behind the pencil's leader position
-                transform: `rotate(${265 - i * 10}deg) translateY(-110px) translateX(-50%)`,
+                // Pushed the start of the trail back to 255deg (from 265deg) to increase separation on both sides
+                transform: `rotate(${255 - i * 10}deg) translateY(-110px) translateX(-50%)`,
                 opacity: Math.max(1 - i * 0.04, 0),
               }}
             />
@@ -40,8 +40,8 @@ const InnovativeLoader: React.FC = () => {
           {/* The Flying Pencil - Rubber part leading the trail */}
           <div 
             className="absolute top-1/2 left-1/2"
-            // Adjusted rotation to 282deg to push the pencil further ahead of the trail for better separation
-            style={{ transform: `rotate(282deg) translateY(-110px) translateX(-50%) translateY(-50%)` }}
+            // Pushing the pencil even further ahead to 290deg for maximum separation
+            style={{ transform: `rotate(290deg) translateY(-110px) translateX(-50%) translateY(-50%)` }}
           >
             <div className="relative">
                 {/* Pencil Icon: Rubber part (top) is now the leader point */}
